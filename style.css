@@ -1,5 +1,94 @@
 :root {
   --my-blue: #0991b3;
+  --standard-box-shadow: 2px 2px 4px grey;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display";
+}
+
+.header-wrapper {
+  position: relative;
+}
+
+.header-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -20vh;
+  right: 0;
+  bottom: 20vh;
+  left: 0;
+  background-color: var(--my-blue);
+  box-shadow: var(--standard-box-shadow);
+  transform: skew(0, -7deg);
+}
+
+.header-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 75px 125px;
+}
+
+.header-img {
+  width: clamp(500px, calc(156.25px + 31.25vw), 750px);
+  flex-shrink: 0;
+  height: auto;
+  aspect-ratio: 10 / 11;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url("./images/top-img-resized.jpg");
+  background-size: cover;
+}
+
+h1.caption {
+  line-height: 1.1;
+  font-size: clamp(3.75rem, calc(2.72rem + 1.5vw), 4.5rem);
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+h2 {
+  font-size: clamp(2.5rem, calc(1.64rem + 1.25vw), 3.13rem);
+}
+
+.hero-card {
+  flex: 1;
+  background-color: white;
+  box-shadow: var(--standard-box-shadow);
+  padding: 75px 60px 50px 40px;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-card p {
+  font-size: clamp(1rem, calc(0.31rem + 1vw), 1.5rem);
+}
+
+.icon-area-large {
+  margin-top: auto;
+  align-self: flex-end;
+  display: flex;
+  gap: 25px;
+}
+
+/* Media query planning area */
+
+/* tablet */
+@media screen and (width < 1100px) {
+}
+
+/* mobile */
+@media screen and (width < 600px) {
 }
 
 /* Placeholders */
@@ -7,6 +96,11 @@ img {
   width: 200px;
   height: 200px;
   border: 1px solid black;
+}
+
+.icon-area-large .icon-btn {
+  width: 50px;
+  height: 50px;
 }
 
 .icon,
