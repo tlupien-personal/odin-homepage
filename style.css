@@ -86,8 +86,8 @@ h2 {
 }
 
 .icon-area-large .icon-btn {
-  width: clamp(40px, calc(26.25px + 1.25vw), 50px);
-  height: clamp(40px, calc(26.25px + 1.25vw), 50px);
+  width: clamp(45px, calc(24.375px + 1.875vw), 60px);
+  height: clamp(45px, calc(24.375px + 1.875vw), 60px);
 }
 
 .icon,
@@ -100,6 +100,46 @@ h2 {
 
 .icon-btn * {
   fill: black;
+}
+
+main h2 {
+  padding-left: 100px;
+}
+
+h3 {
+  font-weight: 100;
+  font-size: 1.5rem;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 50px;
+  padding: 50px 100px;
+  place-content: center;
+}
+
+.project-card {
+  width: 100%;
+  box-shadow: var(--standard-box-shadow);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+}
+
+.project-card p {
+  font-size: 1.125rem;
+}
+
+.card-text-container {
+  padding: 25px;
+}
+
+.card-heading-row-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Media query planning area */
@@ -136,6 +176,9 @@ h2 {
 
   header h2 {
     text-align: center;
+  }
+  .project-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
@@ -175,9 +218,18 @@ h2 {
   .icon-area-large {
     margin-right: auto;
   }
-  
+
   .icon-area-large .icon-btn {
     width: 60px;
+  }
+
+  main h2 {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .project-container {
+    padding: 25px;
   }
 }
 
