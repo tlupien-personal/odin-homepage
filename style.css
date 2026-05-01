@@ -16,29 +16,37 @@ h4 {
 
 .header-wrapper {
   position: relative;
+  padding: 75px 125px;
 }
 
 .header-wrapper::before {
   content: "";
   position: absolute;
-  top: -20vh;
+  top: -50vh;
   right: 0;
-  bottom: 20vh;
+  bottom: 50vh;
   left: 0;
   background-color: var(--my-blue);
   box-shadow: var(--standard-box-shadow);
-  transform: skew(0, -7deg);
+  transform: skew(0, -9deg);
 }
 
 .header-content {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 75px 125px;
+  padding: 50px;
+}
+
+.hero-card {
+  background-color: white;
+  box-shadow: var(--standard-box-shadow);
+  padding: 25px;
 }
 
 .header-img {
-  width: clamp(500px, calc(156.25px + 31.25vw), 750px);
+  /* width: clamp(500px, calc(156.25px + 31.25vw), 750px); */
+  width: clamp(300px, calc(161.54px + 23.08vw), 600px);
   flex-shrink: 0;
   height: auto;
   aspect-ratio: 10 / 11;
@@ -58,25 +66,18 @@ h1.caption {
 
 h2 {
   font-size: clamp(2.5rem, calc(1.64rem + 1.25vw), 3.13rem);
+  font-weight: 100;
 }
 
-.hero-card {
-  flex: 1;
-  background-color: white;
-  box-shadow: var(--standard-box-shadow);
-  padding: 75px 60px 50px 40px;
-  gap: 25px;
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-card p {
+.header-content p {
   font-size: clamp(1rem, calc(0.31rem + 1vw), 1.5rem);
+  line-height: 1.75;
+  color: #666;
 }
 
 .icon-area-large {
-  margin-top: auto;
-  align-self: flex-end;
+  width: fit-content;
+  margin-left: auto;
   display: flex;
   gap: 25px;
 }
@@ -85,6 +86,26 @@ h2 {
 
 /* tablet */
 @media screen and (width < 1100px) {
+  .header-img {
+    float: left;
+    margin: -150px 25px 0px -125px;
+  }
+
+  .header-content {
+    background-color: white;
+    box-shadow: var(--standard-box-shadow);
+    display: block;
+  }
+
+  .hero-card {
+    background-color: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .header-wrapper {
+    padding-top: 200px;
+  }
 }
 
 /* mobile */
@@ -99,8 +120,8 @@ img {
 }
 
 .icon-area-large .icon-btn {
-  width: 50px;
-  height: 50px;
+  width: clamp(40px, calc(26.25px + 1.25vw), 50px);
+  height: clamp(40px, calc(26.25px + 1.25vw), 50px);
 }
 
 .icon,
