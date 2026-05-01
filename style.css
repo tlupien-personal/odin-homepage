@@ -16,19 +16,20 @@ h4 {
 
 .header-wrapper {
   position: relative;
+  overflow: hidden;
   padding: 75px 125px;
 }
 
 .header-wrapper::before {
   content: "";
   position: absolute;
-  top: -50vh;
-  right: 0;
-  bottom: 50vh;
-  left: 0;
+  top: -50%;
+  right: -10%;
+  bottom: 50%;
+  left: -10%;
   background-color: var(--my-blue);
   box-shadow: var(--standard-box-shadow);
-  transform: skew(0, -9deg);
+  transform: skew(0, -7deg);
 }
 
 .header-content {
@@ -67,6 +68,7 @@ h1.caption {
 h2 {
   font-size: clamp(2.5rem, calc(1.64rem + 1.25vw), 3.13rem);
   font-weight: 100;
+  overflow-wrap: normal;
 }
 
 .header-content p {
@@ -77,6 +79,7 @@ h2 {
 
 .icon-area-large {
   width: fit-content;
+  margin-top: 25px;
   margin-left: auto;
   display: flex;
   gap: 25px;
@@ -105,11 +108,52 @@ h2 {
 
   .header-wrapper {
     padding-top: 200px;
+    padding-left: clamp(75px, calc(15px + 10vw), 125px);
+    padding-right: clamp(75px, calc(15px + 10vw), 125px);
+  }
+
+  h1.caption {
+    align-self: flex-start;
+    transform: translate(100%);
+  }
+
+  header h2 {
+    text-align: center;
   }
 }
 
 /* mobile */
 @media screen and (width < 600px) {
+  .header-wrapper {
+    padding: 0;
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    background-color: unset;
+    box-shadow: unset;
+    padding: 25px;
+  }
+
+  h1.caption {
+    align-self: unset;
+    transform: unset;
+  }
+
+  .header-img {
+    margin: unset;
+    width: 100%;
+  }
+
+  .hero-card {
+    background-color: white;
+    box-shadow: unset;
+  }
+
+  .header-wrapper::before {
+    bottom: 75%;
+  }
 }
 
 /* Placeholders */
